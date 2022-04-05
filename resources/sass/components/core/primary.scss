@@ -1,0 +1,201 @@
+@use '../base/_variables';
+
+html{
+    background: _variables.$primary-color;
+}
+body{
+    font-family: _variables.$font-base;
+    font-size: _variables.$font-size-3;
+    line-height: _variables.$line-height-standard;
+}
+button{
+    &:focus{
+        outline: none;
+    }
+}
+a{
+    color: _variables.$primary-color;
+    &:focus{
+        outline: none;
+        color: _variables.$secondary-color;
+    }
+    &:hover{
+        color: _variables.$secondary-color;
+        text-decoration: none;
+    }
+}
+h1{
+    font-size: _variables.$font-size-12;
+    font-weight: _variables.$font-weight-bold;
+    margin: 15px 0;
+}
+h2{
+    font-size: _variables.$font-size-7;
+    font-weight: _variables.$font-weight-bold;
+    margin: 12px 0;
+}
+h3{
+    font-size: _variables.$font-size-5;
+    font-weight: _variables.$font-weight-bold;
+    margin: 10px 0;
+}
+h4{
+    font-size: _variables.$font-size-4;
+    font-weight: _variables.$font-weight-bold;
+    margin: 8px 0;
+}
+h5{
+    font-size: _variables.$font-size-3;
+    font-weight: _variables.$font-weight-bold;
+    margin: 6px 0;
+}
+h6{
+    font-size: _variables.$font-size-2;
+    font-weight: _variables.$font-weight-bold;
+    margin: 4px 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+td, select {
+    outline: 0 !important;
+}
+
+/*CENTRALIZING THE SECTION VERTICALLY AND HORIZONTALLY*/
+.centralize-wrapper {
+    width: 100%;
+    padding: 0;
+    display: table;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    .centralize-inner {
+        padding: 0;
+        vertical-align: middle;
+        display: table-cell;
+        margin: 0;
+        .centralize-content {
+            max-width: 360px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 10px;
+        }
+    }
+}
+
+.invalid-feedback {
+    color: _variables.$danger-color;
+    display: block;
+    font-size: _variables.$font-size-2;
+}
+
+.lf-setting-table {
+    border-style: dotted;
+    td {
+        padding: 8px;
+        border-style: dotted;
+    }
+}
+
+table{
+    font-size: _variables.$font-size-2;
+}
+
+.lf-nav-tab {
+    background: _variables.$primary-color;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    a {
+        display: inline-block;
+        background: _variables.$warning-color;
+        color: _variables.$gray-3;
+        font-size: _variables.$font-size-2;
+        &:hover, &.active {
+            background: _variables.darker(_variables.$warning-color, 30%);
+            color: _variables.$gray-1;
+        }
+    }
+}
+
+.lf-no-header-wrapper {
+    padding: 30px 15px !important;
+    max-width: 400px !important;
+    h4 {
+        color: _variables.$white-color;
+    }
+    .lf-no-header-inner {
+        padding: 30px 15px;
+        background: rgba(_variables.$black-color,0.2);
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(_variables.$black-color,0.3);
+        p {
+            color: _variables.$white-color;
+        }
+        .invalid-feedback {
+            color: _variables.darker(_variables.$warning-color, 20%) !important;
+            text-shadow: 0 0 2px rgba(_variables.$black-color,0.3);
+        }
+        label {
+            color: _variables.$white-color !important;
+        }
+        a{
+            color: _variables.$warning-color;
+            &:hover{
+                color: _variables.darker(_variables.$warning-color,30%) !important;
+            }
+        }
+    }
+}
+.no-header-light {
+    background: _variables.$gray-11;
+    .lf-no-header-wrapper {
+        h4 {
+            color: _variables.$primary-color;
+        }
+        .lf-no-header-inner {
+            background: _variables.$primary-color;
+            box-shadow: 0 0 5px rgba(_variables.$black-color,0.3);
+            p {
+                color: _variables.$white-color;
+            }
+            .invalid-feedback {
+                color: _variables.darker(_variables.$warning-color, 20%) !important;
+                text-shadow: 0 0 2px rgba(_variables.$black-color,0.3);
+            }
+            label {
+                color: _variables.$white-color !important;
+            }
+            a{
+                color: _variables.$warning-color;
+                &:hover{
+                    color: _variables.darker(_variables.$warning-color,30%) !important;
+                }
+            }
+        }
+        .lf-checkbox {
+            input {
+                &:checked + label {
+                    &::before {
+                        background: _variables.lighter(_variables.$primary-color, 20%);
+                        color: _variables.$white-color;
+                    }
+                }
+            }
+
+            label {
+                &.active {
+                    color: _variables.$gray-7;
+                    &::before {
+                        background: _variables.lighter(_variables.$primary-color, 50%);
+                        color: _variables.$white-color;
+                    }
+                }
+            }
+        }
+    }
+}

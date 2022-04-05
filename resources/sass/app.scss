@@ -1,0 +1,20 @@
+/*SYSTEM*/
+@use 'node_modules/bootstrap/scss/bootstrap.scss';
+@use 'node_modules/font-awesome/scss/font-awesome.scss';
+
+/* CORE */
+@use 'components/core/primary';
+@use 'components/core/bootstrap_custom';
+@use 'components/core/top_nav';
+@use 'components/core/side_nav';
+@use 'components/core/dropdown_notification';
+@use 'components/core/dropdown_user';
+@use 'components/core/dropdown_language';
+@use 'components/core/breadcrumb';
+@use 'components/core/custom_inputs';
+@use 'components/core/flash_message';
+@use 'components/core/datetimepicker';
+@use 'components/core/list_search';
+@use 'components/core/list_filter';
+@use 'components/core/list_pagination';
+@use 'components/core/datatable';

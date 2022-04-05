@@ -1,0 +1,220 @@
+@use '../base/_variables';
+
+/*------------------------------------*/
+/* :::::: CHECKBOX STYLE STARTS ::::::*/
+/*------------------------------------*/
+.lf-checkbox {
+    input {
+        display: none;
+        &:checked + label{
+            &::before {
+                content: '\f00c';
+                background: _variables.$primary-color;
+                color: _variables.$white-color;
+            }
+        }
+    }
+    label {
+        font-size: _variables.$font-size-2;
+        position: relative;
+        padding-left: 24px;
+        line-height: 21px;
+        cursor: pointer;
+        &.inactive {
+            cursor: default !important;
+            color: _variables.$gray-7;
+            &::before{
+                background: _variables.lighter(_variables.$gray-8, 40%);
+                color: _variables.lighter(_variables.$gray-2, 40%);
+            }
+        }
+        &.active{
+            cursor: default !important;
+            color: _variables.$gray-7;
+            &::before{
+                content: '\f00c';
+                background: _variables.lighter(_variables.$primary-color, 40%);
+                color: _variables.$white-color;
+            }
+        }
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: _variables.$gray-8;
+            color: _variables.$gray-2;
+            left: 0;
+            top: 0;
+            display: block;
+            position: absolute;
+            font-family: fontawesome;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 20px;
+        }
+    }
+}
+/*------------------------------------*/
+/* ::::::: CHECKBOX STYLE ENDS :::::::*/
+/*------------------------------------*/
+
+/*------------------------------------*/
+/* :::::::: RADIO STYLE STARTS :::::::*/
+/*------------------------------------*/
+.lf-radio {
+    input {
+        display: none;
+        &:checked + label{
+            &::before {
+                content: '\f00c';
+                background: _variables.$primary-color;
+                color: _variables.$white-color;
+            }
+        }
+    }
+    label {
+        font-size: _variables.$font-size-2;
+        position: relative;
+        padding-left: 24px;
+        line-height: 21px;
+        cursor: pointer;
+        &.inactive {
+            cursor: default !important;
+            color: _variables.$gray-7;
+            &::before{
+                background: _variables.lighter(_variables.$gray-8, 40%);
+                color: _variables.lighter(_variables.$gray-2, 40%);
+            }
+        }
+        &.active{
+            cursor: default !important;
+            color: _variables.$gray-7;
+            &::before{
+                content: '\f00c';
+                background: _variables.lighter(_variables.$primary-color, 40%);
+                color: _variables.$white-color;
+            }
+        }
+        &::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: _variables.$gray-8;
+            color: _variables.$gray-2;
+            left: 0;
+            top: 0;
+            display: block;
+            position: absolute;
+            font-family: fontawesome;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+        }
+    }
+}
+/*------------------------------------*/
+/* ::::::::: RADIO STYLE ENDS ::::::::*/
+/*------------------------------------*/
+
+
+/*------------------------------------*/
+/* ::::::: SWITCH STYLE STARTS :::::::*/
+/*------------------------------------*/
+.lf-switch {
+    display: inline-block;
+    position: relative;
+    background: _variables.$gray-6;
+    border-radius: 0;
+    padding: 1px;
+
+    .lf-switch-input {
+        display: none;
+        &:checked {
+            + .lf-switch-label {
+                color: _variables.$success-color;
+                &::before {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background: _variables.$white-color;
+                }
+            }
+        }
+    }
+    .lf-switch-label {
+        position: relative;
+        color: rgba(_variables.$white-color, 0.5);
+        font-size: _variables.$font-size-2;
+        font-weight: _variables.$font-weight-normal;
+        text-align: center;
+        cursor: pointer;
+        padding: 12px 13px;
+        margin: 0;
+        text-transform: uppercase;
+        z-index: 1;
+        transition: all 200ms linear;
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            transition: all 200ms linear;
+            border-radius: 0;
+        }
+    }
+}
+/*------------------------------------*/
+/* :::::::: SWITCH STYLE ENDS ::::::::*/
+/*------------------------------------*/
+
+/*------------------------------------*/
+/* ::::::: SELECT STYLE STARTS :::::::*/
+/*------------------------------------*/
+.lf-select {
+    position: relative;
+    background: _variables.$white-color;
+    z-index: 5;
+    width: 100%;
+
+    &::after {
+        content: '\f0d7';
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        color: _variables.lighter(_variables.$info-color, 20%);
+        font-family: fontawesome;
+        z-index: 1;
+    }
+    select {
+        position: relative;
+        width: 100% !important;
+        z-index: 2;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        padding-right: 26px;
+        cursor: pointer;
+        background: none !important;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+/*------------------------------------*/
+/* :::::::: SELECT STYLE ENDS ::::::::*/
+/*------------------------------------*/
+
+/*------------------------------------*/
+/* :::::: SELECT2 STYLE STARTS :::::::*/
+/*------------------------------------*/
+.select2-container--bootstrap4.select2-container--focus .select2-selection {
+    box-shadow: 0 !important;
+}
+.select2-container--bootstrap4 .select2-selection {
+    border-radius: 0 !important;
+}
+/*------------------------------------*/
+/* :::::::: SELECT2 STYLE ENDS :::::::*/
+/*------------------------------------*/
